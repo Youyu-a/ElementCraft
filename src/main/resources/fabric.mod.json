@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ElementCraft"
+      "com.h.elementcraft.ElementCraft"
     ]
   },
   "mixins": [

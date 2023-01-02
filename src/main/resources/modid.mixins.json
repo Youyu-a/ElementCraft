@@ -6,7 +6,7 @@
   "mixins": [
   ],
   "client": [
-    "ExampleMixin"
+    "com.h.elementcraft.mixin.ElementCraftMixin"
   ],
   "injectors": {
     "defaultRequire": 1
