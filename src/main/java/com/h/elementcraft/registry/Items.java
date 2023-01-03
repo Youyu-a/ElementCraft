@@ -13,43 +13,37 @@ import static com.h.elementcraft.item.ModItemSettings.food;
 
 public enum Items
 {
-    CABBAGE("cabbage", () -> new Item(food(Foods.CABBAGE)));
+    CABBAGE("cabbage", new Item(food(Foods.CABBAGE)));
 
-    private final String pathName;
-    private final Supplier<Item> itemSupplier;
-    private Item item;
+    private final String id;
+    private final Item item;
 
-    Items(String pathName,Supplier<Item> itemSupplier)
+    Items(String id, Supplier<Item> itemSupplier)
     {
-        this(pathName,itemSupplier);
+        this(id, itemSupplier.get());
     }
 
-    Items(String pathName,Supplier<Item> itemSupplier)
+    Items(String id, Item item)
     {
-        this.pathName = pathName;
-        this.itemSupplier = itemSupplier;
+        this.id = id;
+        this.item = item;
     }
 
     public static void registerAll()
     {
-        for(Items value : values())
+        for(Items item : values())
         {
-            Registry.register(Registries.ITEM,new Identifier(ElementCraft.MOD_ID,value.pathName),value.get());
+            Registry.register(Registries.ITEM, new Identifier(ElementCraft.MOD_ID, item.getId()), item.getItem());
         }
     }
 
-    public Item get()
+    public Item getItem()
     {
-        if (item == null)
-        {
-            item =itemSupplier.get();
-        }
-
-        return item;
+        return this.item;
     }
 
     public String getId()
     {
-        return Registries.ITEM.getId(get()).toString();
+        return this.id;
     }
 }
