@@ -1,12 +1,12 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.fabricmc.example.mixin",
+  "package": "com.h.elementcraft.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],
   "client": [
-    "com.h.elementcraft.mixin.ElementCraftMixin"
+    "ElementCraftMixin"
   ],
   "injectors": {
     "defaultRequire": 1
