@@ -16,17 +16,17 @@ public enum Items
     CABBAGE("cabbage", new Item(food(Foods.CABBAGE)));
 
     private final String id;
-    private final Supplier<Item> itemSupplier;
-
-    Items(String id, Item item)
-    {
-        this(id, () -> item);
-    }
+    private final Item item;
 
     Items(String id, Supplier<Item> itemSupplier)
     {
+        this(id, itemSupplier.get());
+    }
+
+    Items(String id, Item item)
+    {
         this.id = id;
-        this.itemSupplier = itemSupplier;
+        this.item = item;
     }
 
     public static void registerAll()
@@ -39,7 +39,7 @@ public enum Items
 
     public Item getItem()
     {
-        return this.itemSupplier.get();
+        return this.item;
     }
 
     public String getId()
