@@ -2,7 +2,7 @@ package com.h.elementcraft.registry;
 
 
 import com.h.elementcraft.ElementCraft;
-import com.h.elementcraft.item.ModItemSettings;
+import com.h.elementcraft.item.Foods;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -10,10 +10,17 @@ import net.minecraft.util.Identifier;
 
 import java.util.function.Supplier;
 
+import static com.h.elementcraft.item.ModItemSettings.*;
+
 
 public enum Items
 {
-    SILVER_INGOT("silver_ingot",() -> new Item(new ModItemSettings()));
+    //Miner
+    SILVER_INGOT("silver_ingot",() -> new Item(miner())),
+
+    //Farmer
+    CABBAGE("cabbage", () -> new Item(food(Foods.CABBAGE)))
+    ;
 
     private final String id;
     private final Supplier<Item> itemSupplier;
