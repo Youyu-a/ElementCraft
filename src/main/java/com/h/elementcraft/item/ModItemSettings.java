@@ -14,6 +14,6 @@ public class ModItemSettings extends FabricItemSettings
     }
 
     public ModItemSettings() {
-
+        super();
     }
 }
