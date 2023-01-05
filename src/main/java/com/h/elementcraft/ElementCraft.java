@@ -28,9 +28,8 @@ public class ElementCraft implements ModInitializer
 		Compostables.registerAll();
 		Items.registerAll();
 
-		ItemGroupEvents.modifyEntriesEvent(MINER_GROUP).register(content ->{
-			content.;
-		});
+
+
 		LOGGER.info("Hello Fabric World!");
 	}
 }
